@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganyong penjelasan</title>
+
+<style>
+:root{
+  --bg:#0f172a;
+  --card:rgba(255,255,255,0.08);
+  --text:#e2e8f0;
+  --primary:#22c55e;
+}
+
+body.light{
+  --bg:#f4f9f4;
+  --card:rgba(255,255,255,0.7);
+  --text:#1a1a1a;
+  --primary:#2e7d32;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* LOADING */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.loader-text{
+  color:white;
+  font-size:24px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:0.3;}
+}
+
+/* CURSOR GLOW */
+.cursor{
+  position:fixed;
+  width:200px;
+  height:200px;
+  background:radial-gradient(circle, rgba(34,197,94,0.4), transparent);
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:0;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  background:transparent;
+  backdrop-filter:blur(10px);
+  z-index:1000;
+  transition:0.3s;
+}
+
+nav.scrolled{
+  background:rgba(0,0,0,0.6);
+}
+
+.nav-links a{
+  margin:0 10px;
+  color:white;
+  text-decoration:none;
+}
+
+/* HERO */
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:url('https://images.unsplash.com/photo-1598514983318-2f64f8f4796c') center/cover;
+  position:relative;
+}
+
+header::after{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+
+header h1{
+  position:relative;
+  font-size:50px;
+  z-index:1;
+  text-shadow:0 0 30px #22c55e;
+}
+
+/* CONTENT */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.card{
+  background:var(--card);
+  backdrop-filter:blur(12px);
+  padding:25px;
+  margin-bottom:25px;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(0,0,0,0.3);
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
+}
+
+.card:hover{
+  transform:scale(1.02);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h2{color:var(--primary);}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:rgba(0,0,0,0.5);
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader"><div class="loader-text">Loading...</div></div>
+<div class="cursor"></div>
+
+<nav>
+  <div>Ganyong</div>
+  <div class="nav-links">
+    <a href="#asal">Asal</a>
+    <a href="#pengertian">Pengertian</a>
+    <a href="#jenis">Jenis</a>
+    <a href="#manfaat">Manfaat</a>
+    <a href="#efek">Efek</a>
+  </div>
+  <button onclick="toggleTheme()">🌙</button>
+</nav>
+
+<header>
+  <h1>Tanaman Ganyong</h1>
+</header>
+
+<div class="container">
+
+<div class="card" id="asal">
+<h2>Asal Benih</h2>
+<p>
+Benih ganyong yang ditanam di SMP Muhammadiyah 36 Jakarta berasal dari Kampung Cipadali, Desa Cikalong Wetan, Bandung Barat, Jawa Barat.
+</p>
+</div>
+
+<div class="card" id="pengertian">
+<h2>Pengertian</h2>
+<p>
+Ganyong merupakan tanaman jenis umbi-umbian yang dapat dimanfaatkan sebagai sumber pangan dan bahan baku industri  Umbi ganyong dapat menjadi sumber pangan alternatif karena kandungan pati (karbohidrat) yang tinggi. Umbi ini juga kaya dengan protein, kalori, lemak, vitamin C, vitamin B1, fosfor, kalsium dan zat besi.
+</p>
+</div>
+
+<div class="card" id="jenis">
+<h2>Jenis</h2>
+<p>
+Di Indonesia dikenal dua kultivar atau varietas ganyong, yaitu ganyong merah dan ganyong putih. Ganyong merah ditandai dengan warna batang, daun dan pelepahnya yang berwarna merah atau ungu, sedang yang warna batang, daun dan pelepahnya hijau dan sisik umbinya kecoklatan disebut dengan ganyong putih.
+</p>
+</div>
+
+<div class="card" id="manfaat">
+<h2>Manfaat Umbi Ganyong untuk Kesehatan Tubuh</h2>
+
+<p><b>Mengobati Luka Lambung</b><br>
+Kandungan polifenol dan flavanoida dalam ganyong berkhasiat untuk menyembuhkan luka lambung. Caranya tinggal makan saja bubur tepung umbi ganyong dengan air, gula merah dan sedikit garam yang dimasak.</p>
+
+<p><b>Baik Untuk Pencernaan dan Usus</b><br>
+Kandungan pati dalam ganyong ternyata mudah dicerna oleh tubuh. Apalagi dengan kandungan kimianya membuat umbi ini ampuh melancarkan pencernaan dan kesehatan usus. Bubur ganyong juga baik untuk mengatasi diare dan gangguan perut.</p>
+
+<p><b>Mendukung Pertumbuhan Balita</b><br>
+Manfaat umbi ganyong juga baik untuk mendukung tumbuh kembang bayi dan balita. Kandungan zat besi, fosfor dan kalsium yang tinggi dalam makanan ini sangat dibutuhkan untuk pertumbuhan anak.</p>
+
+<p><b>Menguatkan Tulang</b><br>
+Kandungan kalsium yang tinggi dalam ganyong berkhasiat memperbaiki dan menguatkan tulang. Makan rebusan atau bubur ganyong secara berkala sangat baik untuk menjauhkan dari gangguan tulang.</p>
+
+<p><b>Mengatasi Radang Saluran Kencing</b><br>
+Manfaat umbi ganyong juga berkhasiat dalam mengatasi radang saluran kencing. Masak saja umbi ini dengan kumis kucing, akar alang-alang dan air secukupnya hingga mendidh lalu minum airnya selagi hangat.</p>
+
+<p><b>Mengatasi Panas Dalam</b><br>
+Selain mengenyangkan umbi ganyong juga sangat berkhasiat untuk meredakan dan mengatasi gangguan panas dalam. Anda bisa merebus ganyong dan temulak dengan air hingga mendidih dan minum airnya.</p>
+
+<p><b>Baik untuk Penderita Diabetes</b><br>
+Selain sebagai pengganti pangan, kandungan pati dalam ganyong juga tidak membuat kadar gula darah naik, sehingga makanan ini baik untuk pengganti nasi dan sumber karbohidrat bagi penderita diabetes.</p>
+
+<p><b>Sumber Energi yang Baik</b><br>
+Manfaat umbi ganyong juga baik sebagai sumber energi tubuh karena kandungan protein dan karbohidrat atau pati yang tinggi. Makan bubur ganyong bisa membantu tumbuh kembang anak maupun membuat tubuh lebih segar.</p>
+
+<p><b>Baik untuk Menurunkan Berat Badan</b><br>
+Kandungan serat yang cukup tinggi dalam umbi sangat baik untuk mendukung program diet. Karena itu masukkan makanan ini dalam menu diet untuk mempercepat berat badan ideal Anda.</p>
+
+</div>
+
+<div class="card" id="efek">
+<h2>Efek Samping</h2>
+<p>
+Selain manfaat umbi ganyong yang baik untuk kesehatan, tetapi dapat memberikan dampak yang kurang baik untuk tubuh, karena adanya senyawa tanin dan saponin yang bersifat antinutrisi.
+</p>
+</div>
+
+</div>
+
+<footer>
+<p>dimas & makki</p>
+</footer>
+
+<script>
+// LOADER
+window.onload = ()=>{document.getElementById("loader").style.display="none";}
+
+// CURSOR GLOW
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", e=>{
+  cursor.style.left = e.clientX+"px";
+  cursor.style.top = e.clientY+"px";
+});
+
+// SCROLL EFFECT
+const cards = document.querySelectorAll(".card");
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", ()=>{
+  cards.forEach(c=>{
+    if(c.getBoundingClientRect().top < window.innerHeight-100){
+      c.classList.add("show");
+    }
+  });
+
+  nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+// DARK MODE AUTO
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function applyTheme(){
+  if(localStorage.getItem("theme")){
+    document.body.classList.toggle("light", localStorage.getItem("theme")==="light");
+  } else {
+    document.body.classList.toggle("light", !prefersDark.matches);
+  }
+}
+
+function toggleTheme(){
+  const isLight = document.body.classList.toggle("light");
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+}
+
+applyTheme();
+</script>
+
+</body>
+</html>
